@@ -1,0 +1,6 @@
+<app-todo
+    class="d-flex justify-content-center"
+    *ngFor="let todo of todosService.todos$ | async; let i = index"
+    [todo]='todo'
+    [index]='todo.id'>
+</app-todo>
