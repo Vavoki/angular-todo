@@ -1,0 +1,10 @@
+<div class="d-flex justify-content-center">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+        <div class="input-group mb-3">
+            <input id="todo" type="text" formControlName="todo">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="submit">Button</button>
+            </div>
+        </div>
+    </form>  
+</div>

@@ -1,6 +1,14 @@
-<app-todo
-    class="d-flex justify-content-center"
-    *ngFor="let todo of todosService.todos$ | async; let i = index"
-    [todo]='todo'
-    [index]='todo.id'>
-</app-todo>
+<ng-template [ngIf]="(todosService.todos$ | async).length > 0">
+    <app-todo
+        class="d-flex justify-content-center"
+        *ngFor="let todo of (todosService.todos$ | async) | filterTodos:todosService.statusShowMy; let i = index"
+        [todo]='todo'
+        [index]='todo.id'
+        >
+    </app-todo>
+</ng-template>
+<ng-template [ngIf]="(todosService.todos$ | async).length <= 0">
+    <div class="no-todos">
+        No todos added yet
+    </div>   
+</ng-template>
