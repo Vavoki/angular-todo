@@ -7,8 +7,13 @@
         >
     </app-todo>
 </ng-template>
-<ng-template [ngIf]="(todosService.todos$ | async).length <= 0">
+<ng-container *ngIf="(todosService.todos$ | async).length <= 0 && err.length == 0; else second">
     <div class="no-todos">
         No todos added yet
+    </div>
+</ng-container>
+<ng-template #second>
+    <div class="no-todos">
+      {{err}}
     </div>   
 </ng-template>

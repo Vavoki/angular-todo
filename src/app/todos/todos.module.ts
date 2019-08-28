@@ -12,6 +12,8 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { FilterTodosPipe } from '../pipes/filter-todos.pipe';
 import { UpperCaseTodosPipe } from '../pipes/upper-case-todos.pipe';
 import { UserService } from '../services/user/user.service';
+import { SimpleNotificationsModule } from 'angular2-notifications';
+import { notificationConfig } from '../notificationConfig';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { UserService } from '../services/user/user.service';
     SharedModule,
     ReactiveFormsModule,
     FormsModule,
+    SimpleNotificationsModule.forRoot(),
   ],
   providers: [TodosService, UserService]
 })

@@ -12,7 +12,7 @@ import { UserService } from 'src/app/services/user/user.service';
 })
 export class TodoListComponent implements OnInit, OnDestroy {
 
-  err: String;
+  err: String = '';
 
   constructor(private dataStorage: DataStorageService,
               public todosService: TodosService,
@@ -22,7 +22,7 @@ export class TodoListComponent implements OnInit, OnDestroy {
    this.dataStorage.getTodos();
    this.todosService.errTodos$
     .pipe(untilDestroyed(this))
-    .subscribe(err => this.err = err console.log(this.err));
+    .subscribe(err => { this.err = err; });
   }
   public ngOnDestroy() {
 

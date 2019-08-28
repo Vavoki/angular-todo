@@ -4,6 +4,8 @@ import { CommonModule } from '@angular/common';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 
+import { SimpleNotificationsModule } from 'angular2-notifications';
+
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodosModule } from './todos/todos.module';
@@ -27,6 +29,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
+    SimpleNotificationsModule.forRoot(),
     AngularFireAuthModule,
     BrowserModule,
     TodosModule,
@@ -34,7 +37,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     AppRoutingModule,
     CommonModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

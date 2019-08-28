@@ -32,7 +32,6 @@ export class HeaderComponent implements OnInit {
   }
 
   onLogout() {
-    console.log('click');
     this.authService.logout();
   }
 }

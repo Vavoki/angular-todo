@@ -12,7 +12,6 @@ export class TodosComponent implements OnInit {
   constructor(private todoService: TodosService) { }
 
   ngOnInit() {
-    console.log(this.todoService.errTodos);
   }
 
   onChangeStatusShowMy(values: any) {

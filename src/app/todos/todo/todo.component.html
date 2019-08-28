@@ -8,7 +8,7 @@ width: 50vh;">
                 <input  (change)="fieldsChange($event)" [checked]="todo.completed"  type="checkbox" aria-label="Checkbox for following text input">
             </div>
         </div>
-        <input [class.line-through]="todo.completed" class="title" type="text" class="form-control" aria-label="Text input with checkbox" value="{{todo.title}}">
+        <input (change)="onEditeTodo($event)" [class.line-through]="todo.completed" class="title" type="text" class="form-control" aria-label="Text input with checkbox" value="{{todo.title}}">
         <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
     </div>
 </div>

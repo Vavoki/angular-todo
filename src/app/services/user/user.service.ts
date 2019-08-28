@@ -38,8 +38,7 @@ export class UserService {
   }
 
   async register(email: string, password: string) {
-   const result = await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
-   console.log(result);
+   await this.afAuth.auth.createUserWithEmailAndPassword(email, password);
   }
   get isLoggedIn(): boolean {
     const  user  =  JSON.parse(localStorage.getItem('user'));
