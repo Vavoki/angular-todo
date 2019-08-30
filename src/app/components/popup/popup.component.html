@@ -1,0 +1,8 @@
+<h1 mat-dialog-title>Copy your link</h1>
+<div mat-dialog-content>
+    <div class="input-group mb-2">
+        <input class="title" type="text" class="form-control" aria-label="Text input with checkbox" value="{{data.link}}">
+        <button type="button" (click)="copyMessage(data.link)" class="btn btn-outline-primary">Copy</button>
+    </div>
+    <button type="button" (click)="onNoClick()" class="btn btn-outline-primary">Close</button>
+</div>

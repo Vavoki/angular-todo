@@ -1,7 +1,6 @@
 <div style="    display: flex;
 flex-direction: column;
 width: 50vh;">
-    <!-- <p class="text-left">Left aligned text on all viewport sizes.</p> -->
     <div class="input-group mb-2">
         <div class="input-group-prepend">
             <div class="input-group-text">
@@ -10,5 +9,6 @@ width: 50vh;">
         </div>
         <input (change)="onEditeTodo($event)" [class.line-through]="todo.completed" class="title" type="text" class="form-control" aria-label="Text input with checkbox" value="{{todo.title}}">
         <button type="button" class="btn btn-outline-danger" (click)="onDelete()">Delete</button>
+        <button type="button" class="btn btn-link" (click)="onShare()">Share</button>
     </div>
 </div>

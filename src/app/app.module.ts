@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
-
 import { SimpleNotificationsModule } from 'angular2-notifications';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -17,6 +16,10 @@ import { environment } from 'src/environments/environment';
 import { UserService } from './services/user/user.service';
 import { LoginComponent } from './auth/login/login.component';
 import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { UploadFormComponent } from './uploads/upload-form/upload-form.component';
+import { UploadService } from './services/uploads.service';
+
+
 
 
 @NgModule({
@@ -26,6 +29,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     FooterComponent,
     LoginComponent,
     SignUpComponent,
+    UploadFormComponent,
   ],
   imports: [
     AngularFireModule.initializeApp(environment.firebase),
@@ -39,7 +43,7 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
     ReactiveFormsModule,
     FormsModule,
   ],
-  providers: [UserService],
+  providers: [UserService, UploadService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
