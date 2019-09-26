@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { MatDialog } from '@angular/material/dialog';
 
 import { Todo } from 'src/app/models/todo.model';
 import { TodosService } from 'src/app/services/todos.service';
@@ -17,8 +17,10 @@ import { PopupComponent } from 'src/app/components/popup/popup.component';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit, OnDestroy {
+
   @Input() public todo: Todo;
   @Input() public index: number;
+
   public notConfig = notificationConfig;
   public progress: { percentage: number } = { percentage: 0 };
   constructor(private dataStorage: DataStorageService,
@@ -31,7 +33,6 @@ export class TodoComponent implements OnInit, OnDestroy {
     this.uploadService.imgs$
     .pipe(untilDestroyed(this))
     .subscribe(url => {
-      console.log(url);
       const dialogRef = this.dialog.open(PopupComponent, {
         width: '600px',
         data: {link: url}

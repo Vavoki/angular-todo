@@ -1,19 +1,20 @@
 import { FilterTodosPipe } from './filter-todos.pipe';
-import { TestBed } from '@angular/core/testing';
+import { TestBed, inject } from '@angular/core/testing';
 import { UserService } from '../services/user/user.service';
+import { TodoListComponent } from '../todos/todo-list/todo-list.component';
 
 beforeEach(() => {
 
   TestBed.configureTestingModule({
-    providers: [
-      UserService,
-    ]
-  });
+    declarations: [TodoListComponent],
+    providers: [UserService]
+});
 });
 
 describe('FilterTodosPipe', () => {
   it('create an instance', () => {
-    const pipe = new FilterTodosPipe();
-    expect(pipe).toBeTruthy();
+    inject([UserService], (injectService: UserService) => {
+    const pipe = new FilterTodosPipe(injectService);
+    expect(pipe).toBeTruthy(); });
   });
 });
